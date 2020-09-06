@@ -1,3 +1,25 @@
+<div class="container my-4 bg-light">
+    <div class="row">
+        <div class="col-12">
+            <h1>Ki szerve a legjobb</h1>
+            <p>Pista Szervere a legjobb</p>
+            <p> Server With Id {{serverID}} is {{getServerStatus()}} </p>
+            <button class="btn btn-info mb-3">Rendeld meg </button>
+            <button class="btn btn-primary mb-3 ml-4 "[disabled] = "!AllowNewServer" (click) = "onCreateServer()" > Add Server </button>
+            <p [innerText]="AllowNewServer"></p>
+            <p>{{serverCreationStatus}}</p>
+            <label> Server Name </label>
+            <!--
+            <input type="text" class="form-control" (input) ="onUpdateServerName($event)">
+            <p> {{ServerName}}</p>
+-->
+            
+            <input 
+                type="text"
+                class="form-control"
+            [(ngModel)]="ServerName">
+            <p *ngIf="serverCreated">Server was created name is {{ServerName}}</p> 
 
-<h1> Rohamparaszt</h1>
-<p>The Server Component</p>
+        </div>    
+    </div>        
+</div>
